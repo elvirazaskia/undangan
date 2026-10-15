@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan Pernikahan</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="terkunci">
+
+<!-- ========== HALAMAN 1: PEMBUKAAN (nama tamu + hitung mundur) ========== -->
+<section id="cover">
+    <div class="latar"></div>
+  <p>The Wedding Of</p>
+  <h1 class="skrip"><span data-k="panggilPria"></span> &amp; <span data-k="panggilWanita"></span></h1>
+  <p data-k="akadTanggal"></p>
+  <div class="tamu">
+    <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+    <h3 id="namaTamu">Tamu Undangan</h3>
+  </div>
+  <div id="hitung">
+    <div class="kotak"><b id="hari">0</b>Hari</div>
+    <div class="kotak"><b id="jam">0</b>Jam</div>
+    <div class="kotak"><b id="menit">0</b>Menit</div>
+    <div class="kotak"><b id="detik">0</b>Detik</div>
+  </div>
+  <button class="tombol putih" id="btnBuka">Buka Undangan</button>
+</section>
+
+<main id="isi">
+
+<!-- ========== HALAMAN 2: KATA-KATA / AYAT ========== -->
+<section id="ayat" class="hal biru">
+  <h2 class="skrip muncul">Bismillahirrahmanirrahim</h2>
+  <p class="muncul" data-k="ayatTeks"></p>
+  <p class="muncul"><b data-k="ayatSumber"></b></p>
+</section>
+
+<!-- ========== HALAMAN 3: MEMPELAI ========== -->
+<section id="mempelai" class="hal">
+  <h2 class="skrip muncul">Mempelai</h2>
+  <div class="muncul">
+    <img class="foto melayang" src="gambar/pria.jpg" alt="Mempelai pria">
+    <h3 class="skrip nama" data-k="namaPria"></h3>
+    <p><span data-k="anakPria"></span><br><span data-k="ortuPria"></span></p>
+  </div>
+  <p class="skrip dan">&amp;</p>
+  <div class="muncul">
+    <img class="foto melayang" src="gambar/wanita.jpg" alt="Mempelai wanita">
+    <h3 class="skrip nama" data-k="namaWanita"></h3>
+    <p><span data-k="anakWanita"></span><br><span data-k="ortuWanita"></span></p>
+  </div>
+</section>
+
+<!-- ========== HALAMAN 4: PEMBERKATAN & RESEPSI ========== -->
+<section id="acara" class="hal biru">
+  <h2 class="skrip muncul">Waktu &amp; Tempat</h2>
+  <div class="kartu muncul">
+    <h3 class="skrip">Pemberkatan</h3>
+    <p data-k="akadTanggal"></p>
+    <p><b data-k="akadJam"></b></p>
+    <p><b data-k="akadTempat"></b><br><span data-k="akadAlamat"></span></p>
+    <a class="tombol" id="mapsAkad" target="_blank">Lihat Lokasi</a>
+  </div>
+  <div class="kartu muncul">
+    <h3 class="skrip">Resepsi</h3>
+    <p data-k="resepsiTanggal"></p>
+    <p><b data-k="resepsiJam"></b></p>
+    <p><b data-k="resepsiTempat"></b><br><span data-k="resepsiAlamat"></span></p>
+    <a class="tombol" id="mapsResepsi" target="_blank">Lihat Lokasi</a>
+  </div>
+</section>
+
+<!-- ========== HALAMAN 5: MOMEN (cerita + galeri melayang) ========== -->
+<section id="momen" class="hal">
+  <h2 class="skrip muncul">Love Story</h2>
+  <div id="cerita"></div>
+  <h2 class="skrip muncul">Galeri</h2>
+  <div class="galeri">
+    <img class="melayang" src="gambar/momen1.jpg" alt="Momen 1">
+    <img class="melayang" src="gambar/momen2.jpg" alt="Momen 2">
+    <img class="melayang" src="gambar/momen3.jpg" alt="Momen 3">
+    <img class="melayang" src="gambar/momen4.jpg" alt="Momen 4">
+  </div>
+</section>
+
+<!-- ========== HALAMAN 6: PENUTUP (hadir/tidak, hadiah, terima kasih + doa) ========== -->
+<section id="penutup" class="hal biru">
+  <h2 class="skrip muncul">Konfirmasi Kehadiran</h2>
+  <div class="kartu muncul">
+    <input id="rsvpNama" placeholder="Nama kamu">
+    <select id="rsvpHadir">
+      <option value="akan hadir">Hadir</option>
+      <option value="tidak dapat hadir">Tidak hadir</option>
+    </select>
+    <textarea id="rsvpUcapan" rows="3" placeholder="Ucapan &amp; doa"></textarea>
+    <button class="tombol" id="kirimRsvp">Kirim lewat WhatsApp</button>
+  </div>
+  <h2 class="skrip muncul">Wedding Gift</h2>
+  <div class="kartu muncul">
+    <p><b data-k="bank"></b></p>
+    <p id="noRek" data-k="noRek"></p>
+    <p>a.n. <span data-k="atasNama"></span></p>
+    <button class="tombol" id="salin">Salin Nomor</button>
+  </div>
+  <h2 class="skrip muncul">Terima Kasih</h2>
+  <p class="muncul">Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Semoga Allah SWT melimpahkan keberkahan kepada kita semua.</p>
+  <p class="skrip muncul penutup-nama"><span data-k="panggilPria"></span> &amp; <span data-k="panggilWanita"></span></p>
+</section>
+
+</main>
+
+<nav id="nav">
+  <a href="#ayat">Ayat</a>
+  <a href="#mempelai">Mempelai</a>
+  <a href="#acara">Acara</a>
+  <a href="#momen">Momen</a>
+  <a href="#penutup">Ucapan</a>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* ===== WARNA: ubah di sini kalau mau ganti tema ===== */
+:root{--b1:#0a3a82;--b2:#2563c9;--b3:#dbe9fb;--b4:#f1f7ff;--putih:#fff}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#c9d9f0}
+body{font-family:'Poppins',sans-serif;font-weight:300;line-height:1.7;color:#1d2b45;background:var(--putih);max-width:480px;margin:auto;overflow-x:hidden}
+body.terkunci{overflow:hidden}
+body.terkunci #isi{display:none}
+.skrip{font-family:'Dancing Script',cursive;font-weight:600}
+
+/* ----- Halaman 1: cover ----- */
+#cover{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:30px;color:#fff;background:linear-gradient(160deg,var(--b1),var(--b2));position:relative;overflow:hidden}
+#cover::before,#cover::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+#cover::before{width:320px;height:320px;top:-100px;right:-100px}
+#cover::after{width:260px;height:260px;bottom:-90px;left:-90px}
+#cover>*{position:relative}
+#cover h1{font-size:3.2rem;line-height:1.2}
+.tamu h3{font-size:1.4rem;font-weight:500}
+#hitung{display:flex;gap:8px}
+.kotak{background:rgba(255,255,255,.15);border-radius:12px;padding:8px 10px;min-width:62px;font-size:.75rem}
+.kotak b{display:block;font-size:1.4rem;font-weight:500}
+
+/* ----- Halaman umum ----- */
+.hal{padding:70px 24px 100px;text-align:center}
+.hal.biru{background:var(--b4)}
+.hal h2{font-size:2.2rem;color:var(--b1);margin-bottom:14px}
+.hal h2:not(:first-child){margin-top:40px}
+.hal p{margin-bottom:8px}
+.dan{font-size:2.5rem;color:var(--b2)}
+.nama{font-size:2rem;color:var(--b1);margin-top:12px}
+
+/* ----- Foto (melayang naik-turun + bayangan) ----- */
+.foto{width:170px;height:170px;border-radius:50%;object-fit:cover;border:5px solid #fff;background:var(--b3)}
+.melayang{box-shadow:0 14px 28px rgba(10,58,130,.28);animation:naikturun 4s ease-in-out infinite}
+.melayang:nth-child(even){animation-delay:-2s}
+@keyframes naikturun{50%{transform:translateY(-12px)}}
+.galeri{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.galeri img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:4px solid #fff;background:var(--b3)}
+
+/* ----- Kartu, tombol, form ----- */
+.kartu{background:#fff;border-radius:20px;padding:24px 18px;margin:16px 0;box-shadow:0 8px 24px rgba(10,58,130,.12)}
+.kartu h3{font-size:1.7rem;color:var(--b2)}
+.kartu small{color:#6b7a99}
+.tombol{display:inline-block;background:var(--b2);color:#fff;border:0;border-radius:30px;padding:10px 26px;margin-top:10px;font:inherit;text-decoration:none;cursor:pointer}
+.tombol.putih{background:#fff;color:var(--b1);font-weight:500}
+input,select,textarea{width:100%;margin-bottom:10px;padding:10px 14px;border:1px solid var(--b3);border-radius:12px;font:inherit}
+#noRek{font-size:1.4rem;font-weight:500;color:var(--b1)}
+.penutup-nama{font-size:2.6rem;color:var(--b1)}
+
+/* ----- Menu bawah ----- */
+#nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);width:min(456px,94%);display:none;justify-content:space-around;background:var(--b1);border-radius:40px;padding:10px 6px;z-index:9}
+body:not(.terkunci) #nav{display:flex}
+#nav a{color:#fff;text-decoration:none;font-size:.72rem}
+
+/* ----- Muncul pelan saat di-scroll ----- */
+.muncul{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1s}
+.muncul.tampil{opacity:1;transform:none}
+
+/* =====================================================
+   HIASAN GAMBAR TIAP HALAMAN (nama file ada di folder gambar)
+   ===================================================== */
+.latar,.hias{display:none} /* sisa kode lama, disembunyikan */
+@keyframes napas{to{transform:scale(1.06)}}
+@keyframes ayun{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+@keyframes apung{50%{transform:translateY(-14px)}}
+@keyframes geser{50%{transform:translateX(6px)}}
+
+.hal{position:relative;overflow:hidden}
+.hal>*{position:relative;z-index:1}
+.hal::before,.hal::after{content:"";position:absolute;z-index:0;pointer-events:none;background-repeat:no-repeat;background-position:center;background-size:contain}
+
+/* Halaman 1: cover = bingkai 11a (teks jadi biru tua) */
+#cover{color:var(--b1);background:#fff;padding:20svh 12% 26svh}
+#cover::before{inset:0;width:auto;height:auto;border-radius:0;background:url(gambar/11a-bingkai.webp) center/cover;animation:napas 14s ease-in-out infinite alternate}
+#cover::after{display:none}
+#cover .kotak{background:rgba(10,58,130,.08)}
+#cover .tombol.putih{background:var(--b1);color:#fff}
+
+/* Halaman 2: ayat = latar 6b + pita 6a */
+#ayat::before{inset:0;background:url(gambar/6b-latar-bintang.webp) center/cover;opacity:.9;animation:napas 16s ease-in-out infinite alternate}
+#ayat::after{left:50%;bottom:16px;width:110px;height:110px;margin-left:-55px;background-image:url(gambar/6a-pita-navy.webp);animation:apung 5s ease-in-out infinite}
+
+/* Halaman 3: mempelai = tepi bunga kanan 4b + kiri 5b */
+#mempelai{padding-left:16%;padding-right:16%}
+#mempelai::before,#mempelai::after{top:0;bottom:0;width:36%;background-size:100% auto;background-repeat:repeat-y;animation:geser 7s ease-in-out infinite}
+#mempelai::before{right:0;background-position:right top;background-image:url(gambar/4b-tepi-kanan.webp)}
+#mempelai::after{left:0;background-position:left top;background-image:url(gambar/5b-tepi-kiri.webp)}
+
+/* Halaman 4-6: bunga menjuntai di atas (bergoyang) + hiasan kecil di bawah (mengapung) */
+#acara,#momen,#penutup{padding-top:250px}
+#acara::before,#momen::before,#penutup::before{top:-6px;left:50%;width:100%;height:320px;margin-left:-50%;background-position:top center;transform-origin:top center;animation:ayun 6s ease-in-out infinite alternate}
+#acara::before{background-image:url(gambar/1b-wisteria-burung.webp)}
+#momen::before{background-image:url(gambar/2b-bunga-menjuntai.webp)}
+#penutup::before{background-image:url(gambar/20a-bunga-gantung.webp)}
+#acara::after{right:8px;bottom:10px;width:130px;height:180px;background-image:url(gambar/13a-pita-bunga.webp);animation:apung 6s ease-in-out infinite}
+#momen::after{left:0;bottom:6px;width:110px;height:200px;background-image:url(gambar/15a-daun-biru.webp);animation:apung 7s ease-in-out infinite}
+#penutup::after{right:6px;bottom:6px;width:120px;height:240px;background-image:url(gambar/14a-buket-lily.webp);animation:apung 6s ease-in-out infinite}
