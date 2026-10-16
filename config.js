@@ -14,7 +14,7 @@ const DATA = {
   namaWanita: "Salsa Aulia, S.Pd",
   anakWanita: "Putri kedua dari",
   ortuWanita: "Bpk. Nama Ayah & Ibu Nama Ibu",
-
+  
   ayatTeks: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri, agar kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.",
   ayatSumber: "QS. Ar-Rum: 21",
 
@@ -33,11 +33,41 @@ const DATA = {
   resepsiAlamat: "Alamat lengkap, Blitar",
   resepsiMaps: "https://maps.google.com",
 
-  /* Cerita: tambah/kurangi blok { ... }, di antara blok ada koma */
+   /* Nama bagian foto */
+  judulBasmalah: "Bismillahirrahmanirrahim",
+  judulMomen: "Our Moments",
+  judulGaleri: "Galeri",
+
+  /* Foto untuk cerita: file harus tersedia di folder gambar */
   cerita: [
-    { judul: "First Meet", tanggal: "27 Oktober 2023", teks: "Kami pertama kali bertemu dan saling mengenal." },
-    { judul: "Relationship", tanggal: "28 November 2024", teks: "Kami memutuskan untuk berjalan bersama." },
-    { judul: "Engagement", tanggal: "10 Agustus 2026", teks: "Kami mengikat janji untuk melangkah ke jenjang pernikahan." }
+    {
+      judul: "First Meet",
+      tanggal: "27 Oktober 2023",
+      teks: "Kami pertama kali bertemu dan saling mengenal.",
+      foto: "gambar/first-meet.jpg"
+    },
+    {
+      judul: "Relationship",
+      tanggal: "28 November 2024",
+      teks: "Kami memutuskan untuk berjalan bersama.",
+      foto: "gambar/relationship.jpg"
+    },
+    {
+      judul: "Engagement",
+      tanggal: "10 Agustus 2026",
+      teks: "Kami mengikat janji untuk melangkah ke jenjang pernikahan.",
+      foto: "gambar/engagement.jpg"
+    }
+  ],
+
+  /* Nama dan file foto galeri */
+  galeri: [
+    { nama: "Momen 1", foto: "gambar/momen1.jpg" },
+    { nama: "Momen 2", foto: "gambar/momen2.jpg" },
+    { nama: "Momen 3", foto: "gambar/momen3.jpg" },
+    { nama: "Momen 4", foto: "gambar/momen4.jpg" },
+    { nama: "Momen 5", foto: "gambar/momen5.jpg" },
+    { nama: "Momen 6", foto: "gambar/momen6.jpg" }
   ],
 
   bank: "Bank BCA",

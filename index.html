@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Undangan Pernikahan</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./config.js"></script>
-  <script src="./script.js" defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +11,6 @@
 
 <!-- ========== HALAMAN 1: PEMBUKAAN (nama tamu + hitung mundur) ========== -->
 <section id="cover">
-    <div class="latar"></div>
   <p>The Wedding Of</p>
   <h1 class="skrip"><span data-k="panggilPria"></span> &amp; <span data-k="panggilWanita"></span></h1>
   <p data-k="akadTanggal"></p>
@@ -35,9 +31,11 @@
 
 <!-- ========== HALAMAN 2: KATA-KATA / AYAT ========== -->
 <section id="ayat" class="hal biru">
-  <h2 class="skrip muncul">Bismillahirrahmanirrahim</h2>
-  <p class="muncul" data-k="ayatTeks"></p>
-  <p class="muncul"><b data-k="ayatSumber"></b></p>
+  <div class="basmalah">
+    <p class="teks-basmalah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p data-k="ayatTeks"></p>
+    <p class="sumber-ayat"><b data-k="ayatSumber"></b></p>
+  </div>
 </section>
 
 <!-- ========== HALAMAN 3: MEMPELAI ========== -->
@@ -75,20 +73,25 @@
   </div>
 </section>
 
-<!-- ========== HALAMAN 5: MOMEN (cerita + galeri melayang) ========== -->
+<!-- ========== HALAMAN 5: MOMEN (cerita amplop + galeri) ========== -->
+<!-- GANTI isi section#momen lama dengan ini. Bagian galeri tetap punyamu. -->
 <section id="momen" class="hal">
-  <h2 class="skrip muncul">Love Story</h2>
+  <h2 class="skrip muncul" data-k="judulMomen"></h2>
+
+  <!-- tiga amplop dibuat otomatis oleh amplop.js -->
   <div id="cerita"></div>
-  <h2 class="skrip muncul">Galeri</h2>
-  <div class="galeri">
-    <img class="melayang" src="gambar/momen1.jpg" alt="Momen 1">
-    <img class="melayang" src="gambar/momen2.jpg" alt="Momen 2">
-    <img class="melayang" src="gambar/momen3.jpg" alt="Momen 3">
-    <img class="melayang" src="gambar/momen4.jpg" alt="Momen 4">
-  </div>
+
+  <!-- ...galeri punyamu tetap di bawah sini... -->
+</section>
+<section id="momen" class="hal">
+  <h2 class="skrip muncul" data-k="judulMomen"></h2>
+  <div id="cerita"></div>
+  <h2 class="skrip muncul" data-k="judulGaleri"></h2>
+  <div id="galeri" class="galeri"></div>
 </section>
 
-<!-- ========== HALAMAN 6: PENUTUP (hadir/tidak, hadiah, terima kasih + doa) ========== -->
+
+<!-- ========== HALAMAN 6: PENUTUP ========== -->
 <section id="penutup" class="hal biru">
   <h2 class="skrip muncul">Konfirmasi Kehadiran</h2>
   <div class="kartu muncul">
@@ -114,6 +117,13 @@
 
 </main>
 
+<!-- jendela foto besar (dibuka dari kartu amplop) -->
+<dialog id="modalFoto" class="mf">
+  <button class="mf-tutup" type="button" aria-label="Tutup">&times;</button>
+  <img class="mf-foto" alt="">
+  <div class="mf-teks"><small></small><h3 class="skrip"></h3><p></p></div>
+</dialog>
+
 <nav id="nav">
   <a href="#ayat">Ayat</a>
   <a href="#mempelai">Mempelai</a>
@@ -122,6 +132,7 @@
   <a href="#penutup">Ucapan</a>
 </nav>
 
+<script src="config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
